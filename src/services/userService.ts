@@ -26,7 +26,7 @@ export async function getPageOfUsers(
       page * pageSize < userCount
         ? `/users/?page=${page + 1}&pageSize=${pageSize}`
         : null,
-    previous: page > 1 ? `/posts/?page=${page - 1}&pageSize=${pageSize}` : null,
+    previous: page > 1 ? `/users/?page=${page - 1}&pageSize=${pageSize}` : null,
     total: userCount,
   };
 }

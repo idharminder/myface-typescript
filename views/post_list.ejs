@@ -6,10 +6,46 @@
 <ol>
     <% postList.results.forEach(function(post) {%>
         <li>
-            <%= post.message %> - <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %>
+            <h2><%= post.message %></h2>
+            <img src= <%= post.imageUrl %> alt="post.imageUrl" width=200>
+            <p>Created by: <%= post.postedBy.username %></p>
+            <p>Created at: <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %></p>
+
+            <%const myLiked = post.likedBy.some(user => user.id === 1) %>
+
+            <% if (myLiked){%> 
+                <p>Liked by you!</p>
+            <%}%> 
+
+            <%const myDisliked = post.dislikedBy.some(user => user.id === 1) %>
+
+            <% if (myDisliked){%> 
+                <p>Disiked by you!</p>
+            <%}%> 
+
+            <form method="POST" action="/posts/<%=post.id%>/like/" aria-label="likes">
+                <button type="submit">
+                    👍 <%= post.likedBy.length%>
+                </button>
+            </form> 
+            <form method="POST" action="/posts/<%=post.id%>/dislike/" aria-label="dislikes">
+                <button type="submit">
+                    👎 <%= post.dislikedBy.length%>
+                </button>
+            </form>
+            <br>
         </li>
     <% }); %>
 </ol>
+
+<%if (postList.next) { %>
+    <a href="<%= postList.next %>">Next</a>
+<% } %>
+<%if (postList.previous) { %>
+    <a href="<%= postList.previous %>">Previous</a>
+<% } %>
+
+
 </body>
 <%- include('_footer') -%>
 </html>
