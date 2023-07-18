@@ -1,22 +1,75 @@
 /* Add your styles here. */
-nav a:hover{
-    color:chocolate;
+:root{
+    --backgroundColor: #fffffe;
+    --backgroundBannerColor: #272343;
+    --headlineColor: #272343;
+    --paragraphColor: #2d334a;
+    --buttonColor: #ffd803;
+    --buttonTextColor: #272343;
+
+    --strokeColor: #272343;
+    --primaryColor: #eff0f3;
+    --highlightColor: #ffd803;
+    --secondaryColor: #fffffe;
+    --tertiaryColor: #bae8e8;
+
+    --marginSmall: 5px;
+    --paddingSmall: 5px;
 }
 
+h1{
+    color: var(--strokeColor);
+}
+
+body{
+    margin: 0px;
+    background-color: var(--backgroundColor);
+}
+
+nav{
+    background-color: var(--backgroundBannerColor);
+    font-size: 2rem;
+    padding: 5px;
+}
+
+nav div{
+    width: fit-content;
+    margin: 0 auto;
+}
+
+nav a {
+    margin: var(--marginSmall);
+}
+
+nav a, a:visited{
+   text-decoration: none;
+   color: var(--primaryColor);
+}
+
+nav a:hover{
+    color:var(--highlightColor);
+}
 
 body{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 ol {
+    margin: 0px var(--marginSmall); ;
     padding:0;
 }
+
+.post h2 {
+    color: var(--headlineColor);
+}
+
 .post{
     width: auto;
     margin-bottom: 15px;
     border: 1px solid;
     padding: 4;
     list-style-type: none;
-    background-color: aquamarine;
+    background-color: var(--primaryColor);
+    color: var(--paragraphColor);
 }
 .post-image{
     width:auto;
@@ -27,6 +80,30 @@ ol {
 }
 
 .post-head h2{
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: var(--marginSmall);;
+    margin-bottom: var(--marginSmall);;
+}
+
+.bottom-nav {
+    background-color: var(--backgroundBannerColor);
+    font-size: 2rem;
+    padding: var(--paddingSmall);
+}
+
+.bottom-nav div{
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.bottom-nav a {
+    margin: var(--marginSmall);
+}
+
+.bottom-nav a, .bottom-nav a:visited{
+   text-decoration: none;
+   color: var(--primaryColor);
+}
+
+.bottom-nav a:hover{
+    color:var(--highlightColor);
 }

@@ -58,12 +58,17 @@
     <% }); %>
 </ol>
 
-<%if (postList.next) { %>
-    <a href="<%= postList.next %>">Next</a>
-<% } %>
-<%if (postList.previous) { %>
-    <a href="<%= postList.previous %>">Previous</a>
-<% } %>
+<div class="bottom-nav">
+    <div class="bottom-links">
+        <%if (postList.previous) { %>
+            <a href="<%= postList.previous %>">Previous</a>
+        <% } %>
+        <%if (postList.next) { %>
+            <a href="<%= postList.next %>">Next</a>
+        <% } %>
+    </div>
+</div>
+
 
 
 </body>
