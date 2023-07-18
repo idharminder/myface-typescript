@@ -1,0 +1,48 @@
+<li class="post"> 
+            
+                      
+    <img class="post-image" src= <%= post.imageUrl %> alt="post.imageUrl">
+
+    <div class="post-head">
+        <p class="post-author"><%= post.postedBy.username %></p>
+        <p class="post-date"><%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %></p>
+        <p class="post-message"><%= post.message %></p>
+    </div>
+    <div class="post-foot">  
+        <%const myLiked = post.likedBy.some(user => user.id === 1) %>
+        <%const myDisliked = post.dislikedBy.some(user => user.id === 1) %>
+
+        <% let prefString = "" %>
+        <%if (myLiked) { %>
+            <% prefString = "Liked by you!" %>
+            <%}%>
+            
+        <%if (myDisliked) { %>
+            <% prefString = "Disliked by you!" %>
+            <%}%>
+
+
+            
+        <%if (!myLiked && !myDisliked) {%>
+                <form method="POST" action="/posts/<%=post.id%>/like/" aria-label="likes">
+                    <button type="submit">
+                👍      <%= post.likedBy.length%>
+                    </button>
+                </form> 
+                <form method="POST" action="/posts/<%=post.id%>/dislike/" aria-label="dislikes">
+                    <button type="submit">
+                        👎 <%= post.dislikedBy.length%>
+                    </button>
+                </form>
+        <%}; %>
+
+        <%if (myLiked || myDisliked) {%>
+            <p>
+                👍 <%= post.likedBy.length%>
+            </p>
+            <p>
+                👎 <%= post.dislikedBy.length%>
+            </p>
+        <%}; %>
+    </div>
+</li>
