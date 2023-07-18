@@ -1,0 +1,47 @@
+
+
+.user{
+    width: 100vw;
+    height: 40vh;
+}
+
+.user-background{
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+}
+
+.user-profile{
+    width: 100%;
+    height: 50%;
+    margin-left: var(--marginSmall);
+}
+
+.user-profile-image{
+    border-radius: 50%;
+    width: 120px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-text{
+    display:inline-block;
+    vertical-align: top;
+    color: var(--foregroundColor);
+}
+
+.user-name{
+    font-weight: var(--lghterWeight);
+    font-size: 1.5rem;
+    margin-top: var(--marginSmall);
+}
+.user-username{
+    font-weight: var(--boldWeight);
+    font-size: 1rem;
+    margin-bottom: var(--marginSmall);
+}
+.user-email{
+    margin-top: var(--marginSmall);
+    font-weight: var(--lghterWeight);
+    font-size: 0.7rem;
+}

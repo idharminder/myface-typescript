@@ -5,8 +5,16 @@
 <h1>Users</h1>
 <ol>
     <% results.forEach(function(user) {%>
-        <li>
-            <%= user.name %>
+        <li class="user">
+            <img class="user-background" src= <%= user.coverImageUrl%> alt="coverImageUrl">
+            <div class="user-profile">
+                <img class="user-profile-image" src= <%= user.profileImageUrl%> alt="profileImageUrl">
+                <div class="user-text">
+                    <p class="user-name"><%=user.name%></p>
+                    <p class="user-username"><%=user.username%></p>
+                    <p class="user-email"><%=user.email%></p>
+                </div>
+            </div>
         </li>
     <% }); %>
 </ol>
