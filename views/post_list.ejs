@@ -5,19 +5,16 @@
 <h1>Posts</h1>
 <ol>
     <% postList.results.forEach(function(post) {%>
-        <li class="post">
+        <li class="post"> 
+            
+                      
+            <img class="post-image" src= <%= post.imageUrl %> alt="post.imageUrl">
+
             <div class="post-head">
-                <h2><%= post.message %></h2>
-                <p>Created by: <%= post.postedBy.username %></p>
-                <p>Created at: <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %></p>
+                <p class="post-author"><%= post.postedBy.username %></p>
+                <p class="post-date"><%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %></p>
+                <p class="post-message"><%= post.message %></p>
             </div>
-            
-            
-            <div class="post-image">                
-                <img src= <%= post.imageUrl %> alt="post.imageUrl">
-            </div>
-            
-            
             <div class="post-foot">  
                 <%const myLiked = post.likedBy.some(user => user.id === 1) %>
                 <%const myDisliked = post.dislikedBy.some(user => user.id === 1) %>
@@ -31,6 +28,8 @@
                     <% prefString = "Disliked by you!" %>
                     <%}%>
     
+
+                    
                 <%if (!myLiked && !myDisliked) {%>
                         <form method="POST" action="/posts/<%=post.id%>/like/" aria-label="likes">
                             <button type="submit">
@@ -45,7 +44,6 @@
                 <%}; %>
     
                 <%if (myLiked || myDisliked) {%>
-                    <p><%=prefString%></p>
                     <p>
                         👍 <%= post.likedBy.length%>
                     </p>
