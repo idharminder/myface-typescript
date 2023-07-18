@@ -65,14 +65,19 @@ nav a:hover{
 body{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
 ol {
     margin: 0px var(--marginSmall); ;
     padding:0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 
 .post{
-    width: auto;
+    width: 95vw;
+    height: 40vh;
     margin-bottom: 15px;
     border: 1px solid;
     padding: 4;
@@ -88,8 +93,12 @@ ol {
 
 .post-image{
     width: 100%;
-    height: 25%;
+    height: 50%;
     object-fit: cover;
+}
+
+.post-head{
+    margin-left: var(--marginSmall);
 }
 
 .post-author{
@@ -108,6 +117,7 @@ ol {
 .post-foot{
     display: flex;
     flex-direction: row;
+    margin-left: var(--marginSmall);
 }
 
 .bottom-nav {
@@ -133,3 +143,23 @@ ol {
 .bottom-nav a:hover{
     color:var(--highlightColor);
 }
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 480px) {
+    .post{
+        width: 45vw;
+    }
+
+} 
+
+@media only screen and (min-width: 768px) {
+    .post{
+        width: 30vw;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .post{
+        width: 22vw;
+    }
+} 
