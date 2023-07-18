@@ -1,1 +1,32 @@
 /* Add your styles here. */
+nav a:hover{
+    color:chocolate;
+}
+
+
+body{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+ol {
+    padding:0;
+}
+.post{
+    width: auto;
+    margin-bottom: 15px;
+    border: 1px solid;
+    padding: 4;
+    list-style-type: none;
+    background-color: aquamarine;
+}
+.post-image{
+    width:auto;
+}
+
+.post-image img {
+   max-width: 100%;
+}
+
+.post-head h2{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
