@@ -1,12 +1,15 @@
 /* Add your styles here. */
 :root{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
     --backgroundColor: #252A38;
     --backgroundDarkerColor: #151820;
+    
     --foregroundColor: #DCDCDC;
     --primaryColor: #2985FF;
 
-    --transparanantOverlayCOlor: #252A38d9;
-
+    --transparanantOverlayColor: #252A38d9;
+    --profileMaskColor: #252a38a3;
 
     --headlineColor: #272343;
     --paragraphColor: #2d334a;
@@ -24,9 +27,8 @@
 
     --regularWeight: 400;
     --boldWeight: 600;
-    --lghterWeight: 300;
+    --lighterWeight: 300;
 
-    
 }
 
 h1{
@@ -36,34 +38,7 @@ h1{
 body{
     margin: 0px;
     background-color: var(--backgroundColor);
-}
 
-nav{
-    background-color: var(--backgroundDarkerColor);
-    font-size: 2rem;
-    padding: 5px;
-}
-
-nav div{
-    width: fit-content;
-    margin: 0 auto;
-}
-
-nav a {
-    margin: var(--marginSmall);
-}
-
-nav a, a:visited{
-   text-decoration: none;
-   color: var(--secondaryColor);
-}
-
-nav a:hover{
-    color:var(--highlightColor);
-}
-
-body{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 ol {
@@ -74,51 +49,6 @@ ol {
     justify-content: space-around;
 }
 
-
-.post{
-    width: 95vw;
-    height: 40vh;
-    margin-bottom: 15px;
-    border: 1px solid;
-    padding: 4;
-    list-style-type: none;
-    background-color: var(--backgroundDarkerColor);
-    color: var(--foregroundColor);
-}
-
-.post p{
-    margin-top: var(--marginMedium);
-    margin-bottom: var(--marginMedium);
-}
-
-.post-image{
-    width: 100%;
-    height: 50%;
-    object-fit: cover;
-}
-
-.post-head{
-    margin-left: var(--marginSmall);
-}
-
-.post-author{
-    font-weight: var(--boldWeight);
-    font-size: 1.2rem;
-}
-.post-date{
-    font-weight: var(--lghterWeight);
-    font-size: 0.7rem;
-}
-.post-message{
-    font-weight: var(--regularWeight);
-    font-size: 0.8rem;
-}
-
-.post-foot{
-    display: flex;
-    flex-direction: row;
-    margin-left: var(--marginSmall);
-}
 
 .bottom-nav {
     background-color: var(--backgroundDarkerColor);
@@ -143,25 +73,5 @@ ol {
 .bottom-nav a:hover{
     color:var(--highlightColor);
 }
-
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 480px) {
-    .post{
-        width: 45vw;
-    }
-
-} 
-
-@media only screen and (min-width: 768px) {
-    .post{
-        width: 30vw;
-    }
-}
-@media only screen and (min-width: 1200px) {
-    .post{
-        width: 22vw;
-    }
-} 
 
 

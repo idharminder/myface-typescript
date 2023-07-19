@@ -2,36 +2,43 @@
 
 .user{
     width: 100vw;
-    height: 40vh;
+    height: 45vh;
 }
 
 .user-background{
     width: 100%;
-    height: 50%;
+    height: 30vh;
     object-fit: cover;
 }
 
 .user-profile{
+    position: relative;
+    background-color: var(--profileMaskColor);
+    top: -8vh;
     width: 100%;
-    height: 50%;
-    margin-left: var(--marginSmall);
+    height: 20vh;
+    padding-left: 6vw;
+    /* margin-left: var(--marginSmall); */
 }
 
 .user-profile-image{
     border-radius: 50%;
-    width: 120px;
-    height: 100%;
+    width: 140px;
+    height: 140px;
     object-fit: cover;
+    border: 4px solid white;
 }
 
 .user-text{
     display:inline-block;
     vertical-align: top;
     color: var(--foregroundColor);
+    margin-top: 3vh;
+    margin-left: 4vw;
 }
 
 .user-name{
-    font-weight: var(--lghterWeight);
+    font-weight: var(--lighterWeight);
     font-size: 1.5rem;
     margin-top: var(--marginSmall);
 }
@@ -42,6 +49,6 @@
 }
 .user-email{
     margin-top: var(--marginSmall);
-    font-weight: var(--lghterWeight);
+    font-weight: var(--lighterWeight);
     font-size: 0.7rem;
 }

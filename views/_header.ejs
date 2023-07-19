@@ -1,9 +1,19 @@
 <header>
-    <nav>
-        <div>
-            <a href="/posts">Posts</a>
-            <a href="/users">Users</a>
-        </div>
+	<button onclick="onHamburgerClicked()" class="navbar-hamburger">
+		<i class="fa fa-bars" style="color: #ffffff;"></i>
+	</button>
+	<nav id="navbar" class="navbar">
+		<button onclick="onHamburgerClicked()" class="navbar-hamburger">
+			<i class="fa fa-bars" style="color: #ffffff;"></i>
+		</button>
 
-    </nav>
+		<a class="navbar-logo" href="/">MyFace</a>
+
+		<div class="navbar-routes">
+			<a href="/">Home</a>
+			<a href="/posts">Posts</a>
+			<a href="/users">Users</a>
+		</div>
+		<a class="navbar-create-post" href="/posts/create">+ New Post</a>
+	</nav>
 </header>
