@@ -6,6 +6,7 @@ import { Post } from "../models/database/post";
 import { CreatePostRequest } from "../models/api/createPostRequest";
 import { createInteraction } from "../repos/interactionRepo";
 import { parse } from "date-fns";
+import { InteractionType } from "../models/database/interaction";
 
 export async function getPageOfPosts(
   page: number,
@@ -48,6 +49,22 @@ export async function dislikePost(
   return createInteraction(userId, postId, "DISLIKE");
 }
 
+export async function getPageOfInteractedPosts(page:number, pageSize:number,userId: number, interaction:InteractionType){
+  const posts = await postRepo.getPostsUserLiked(1,10,userId,interaction)
+  const postModels = await Promise.all(posts.map(toPostModel));
+  const postsCount = postModels.length;
+
+  return {
+    results: postModels,
+    next:
+      page * pageSize < postsCount
+        ? `/posts/?page=${page + 1}&pageSize=${pageSize}`
+        : null,
+    previous: page > 1 ? `/posts/?page=${page - 1}&pageSize=${pageSize}` : null,
+    total: postsCount,
+  };
+}
+
 async function toPostModel(post: Post): Promise<PostModel> {
   return {
     id: post.id,
@@ -55,7 +72,7 @@ async function toPostModel(post: Post): Promise<PostModel> {
     imageUrl: post.imageUrl,
     createdAt: parse(post.createdAt, "yyyy-MM-dd HH:mm:ss", new Date()),
     postedBy: await getUser(post.userId),
-    likedBy: await getByPostInteraction(post.id, "LIKE", 1, 10),
-    dislikedBy: await getByPostInteraction(post.id, "DISLIKE", 1, 10),
+    likedBy: await getByPostInteraction(post.id, "LIKE", 1, 100),
+    dislikedBy: await getByPostInteraction(post.id, "DISLIKE", 1, 100),
   };
 }

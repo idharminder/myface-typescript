@@ -1,4 +1,12 @@
+.user-list{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
 
+.profile-banner{
+    margin-bottom: -8vh;
+}
 
 .user{
     width: 100vw;
@@ -51,4 +59,11 @@
     margin-top: var(--marginSmall);
     font-weight: var(--lighterWeight);
     font-size: 0.7rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .user-list .user{
+        max-width: 40vw;
+    }
+
 }

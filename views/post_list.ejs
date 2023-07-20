@@ -3,7 +3,7 @@
 <%- include('_header') -%>
 <body>
 <h1>Posts</h1>
-<ol>
+<ol class="all-posts">
     <% postList.results.forEach(function(post) {%>
         <%- include('post_individual', {post: post}); %>
     <% }); %>

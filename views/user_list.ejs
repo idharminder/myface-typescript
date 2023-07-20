@@ -3,27 +3,29 @@
 <%- include('_header') -%>
 <body>
 <h1>Users</h1>
-<ol>
+<ol class="user-list">
     <% results.forEach(function(user) {%>
         <li class="user">
-            <img class="user-background" src= <%= user.coverImageUrl%> alt="coverImageUrl">
-            <div class="user-profile">
-                <img class="user-profile-image" src= <%= user.profileImageUrl%> alt="profileImageUrl">
-                <div class="user-text">
-                    <p class="user-name"><%=user.name%></p>
-                    <p class="user-username"><%=user.username%></p>
-                    <p class="user-email"><%=user.email%></p>
-                </div>
+            <div>
+                <%- include('user_individual', {user: user}); %>
             </div>
+
         </li>
     <% }); %>
 </ol>
-<%if (next) { %>
-    <a href="<%= next %>">Next</a>
-<% } %>
-<%if (previous) { %>
-    <a href="<%= previous %>">Previous</a>
-<% } %>
+
+<div class="bottom-nav">
+    <div class="bottom-links">
+        <%if (previous) { %>
+            <a href="<%= previous %>">Previous</a>
+        <% } %>
+        <%if (next) { %>
+            <a href="<%= next %>">Next</a>
+        <% } %>
+    </div>
+</div>
+
 </body>
 <%- include('_footer') -%>
 </html>
+

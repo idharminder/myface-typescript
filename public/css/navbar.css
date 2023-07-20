@@ -91,7 +91,7 @@
         flex-direction: row;
         width: 100vw;
         left: 0;
-        height: 10vh;
+        height: var(--desktopNavBarHeight);
     
     }
 

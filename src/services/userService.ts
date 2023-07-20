@@ -54,7 +54,7 @@ async function toUserModel(user: User): Promise<UserModel> {
       imageUrl: p.imageUrl,
       createdAt: parse(p.createdAt, "yyyy-MM-dd HH:mm:ss", new Date()),
     })),
-    likes: await getPostsByUserInteraction(1, 10, user.id, "LIKE"),
-    dislikes: await getPostsByUserInteraction(1, 10, user.id, "DISLIKE"),
+    likes: await getPostsByUserInteraction(1, 100, user.id, "LIKE"),
+    dislikes: await getPostsByUserInteraction(1, 100, user.id, "DISLIKE"),
   };
 }
