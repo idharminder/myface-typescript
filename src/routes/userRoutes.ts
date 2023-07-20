@@ -49,8 +49,6 @@ router.get("/:userId/", async (request, response) => {
   const likedPosts = await getPageOfInteractedPosts(1,10,userId,"LIKE")
   const dislikedPosts = await getPageOfInteractedPosts(1,10,userId,"DISLIKE")
 
-  console.log(likedPosts)
-
   return response.render("user_detail", {user, likedPosts, dislikedPosts, format});
 });
 

@@ -25,7 +25,7 @@
             
         <%if (!myLiked && !myDisliked) {%>
                 <form method="POST" action="/posts/<%=post.id%>/like/" aria-label="likes">
-                    <button type="submit">
+                    <button type="submit" >
                 👍      <%= post.likedBy.length%>
                     </button>
                 </form> 
@@ -37,12 +37,12 @@
         <%}; %>
 
         <%if (myLiked || myDisliked) {%>
-            <p>
-                👍 <%= post.likedBy.length%>
-            </p>
-            <p>
-                👎 <%= post.dislikedBy.length%>
-            </p>
+                <p >
+                    👍 <%= post.likedBy.length%>
+                </p>
+                <p  >
+                    👎 <%= post.dislikedBy.length%>
+                </p>
         <%}; %>
     </div>
 </li>

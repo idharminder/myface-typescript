@@ -25,6 +25,17 @@
     </ol>
 </section>
 
+<section>
+    <h2><%= user.name %>'s Created Posts</h2>
+    <ol class="interacted-posts">
+        <% dislikedPosts.results.forEach(function(post) {%>
+            <%- include('post_individual', {post: post}); %>
+        <% }); %>
+    </ol>
+</section>
+
+
+
 </body>
 <%- include('_footer') -%>
 </html>
