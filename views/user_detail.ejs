@@ -8,6 +8,15 @@
 </section>
 
 <section>
+    <h2><%= user.name %>'s Created Posts</h2>
+    <ol class="interacted-posts">
+        <% userPosts.results.forEach(function(post) {%>
+            <%- include('post_individual', {post: post}); %>
+        <% }); %>
+    </ol>
+</section>
+
+<section>
     <h2><%= user.name %>'s Liked Posts</h2>
     <ol class="interacted-posts">
         <% likedPosts.results.forEach(function(post) {%>
@@ -18,15 +27,6 @@
 
 <section>
     <h2><%= user.name %>'s Disliked Posts</h2>
-    <ol class="interacted-posts">
-        <% dislikedPosts.results.forEach(function(post) {%>
-            <%- include('post_individual', {post: post}); %>
-        <% }); %>
-    </ol>
-</section>
-
-<section>
-    <h2><%= user.name %>'s Created Posts</h2>
     <ol class="interacted-posts">
         <% dislikedPosts.results.forEach(function(post) {%>
             <%- include('post_individual', {post: post}); %>

@@ -75,6 +75,18 @@ export async function getPostsUserLiked(
     .offset((page - 1) * pageSize);
 }
 
+export async function getPostsByUser(
+  page: number,
+  pageSize: number,
+  userId: number,
+): Promise<Post[]> {
+  return database<Post>("posts")
+    .select("*")
+    .where("userId", userId)
+    .limit(pageSize)
+    .offset((page - 1) * pageSize);
+}
+
 export async function createPost(newPost: CreatePostRequest): Promise<void> {
   await database<Post>("posts").insert(
     {

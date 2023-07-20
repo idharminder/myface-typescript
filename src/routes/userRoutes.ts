@@ -1,6 +1,6 @@
 import express from "express";
 import { createUser, getPageOfUsers, getUser } from "../services/userService";
-import { getPageOfInteractedPosts } from "../services/postService";
+import { getPageOfInteractedPosts, getUserPosts } from "../services/postService";
 import { CreateUserRequest } from "../models/api/createUserRequest";
 import { body, validationResult } from "express-validator";
 import { format } from "date-fns";
@@ -46,10 +46,12 @@ router.get("/:userId/", async (request, response) => {
 
   const user = await getUser(userId);
   
+  const userPosts = await getUserPosts(1,10,userId)
+  // console.log(userPosts)
   const likedPosts = await getPageOfInteractedPosts(1,10,userId,"LIKE")
   const dislikedPosts = await getPageOfInteractedPosts(1,10,userId,"DISLIKE")
 
-  return response.render("user_detail", {user, likedPosts, dislikedPosts, format});
+  return response.render("user_detail", {user, userPosts, likedPosts, dislikedPosts, format});
 });
 
 export default router;
