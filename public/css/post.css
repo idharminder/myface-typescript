@@ -3,22 +3,15 @@
 	justify-content: space-around;
 }
 
-.interacted-posts{
+.horizontal-flex{
 	flex-wrap: nowrap;
 	overflow: auto;
 
 }
 
-/* .flex-horizontal-overflow .post{
-    margin: 0 auto;
-} */
-
-.interacted-posts .post {
+.horizontal-flex .post {
     margin: 2em 1vw;
     flex-shrink: 0;
-
-	/* flex: 1; */
-    /* min-width: 22vw; */
 }
 
 .post {
