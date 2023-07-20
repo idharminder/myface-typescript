@@ -4,7 +4,7 @@
     <img class="post-image" src= <%= post.imageUrl %> alt="post.imageUrl">
 
     <div class="post-head">
-        <p class="post-author"><%= post.postedBy.username %></p>
+        <p class="post-author" onclick="goToUserProfile('<%= post.postedBy.id %>')"><%= post.postedBy.username %></p>
         <p class="post-date"><%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %></p>
         <p class="post-message"><%= post.message %></p>
     </div>

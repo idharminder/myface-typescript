@@ -5,7 +5,7 @@
 <h1>Users</h1>
 <ol class="user-list">
     <% results.forEach(function(user) {%>
-        <li class="user">
+        <li class="user" onclick="goToUserProfile('<%= user.id %>')">
             <div>
                 <%- include('user_individual', {user: user}); %>
             </div>
