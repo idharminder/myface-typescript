@@ -23,6 +23,9 @@
 
     --marginSmall: 5px;
     --marginMedium: 0.5rem;
+
+    --paddingLarge: 25px;
+    --paddingMedium: 15px;
     --paddingSmall: 5px;
 
     --regularWeight: 400;
