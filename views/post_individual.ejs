@@ -25,12 +25,12 @@
             
         <%if (!myLiked && !myDisliked) {%>
                 <form method="POST" action="/posts/<%=post.id%>/like/" aria-label="likes">
-                    <button type="submit" >
+                    <button class="interaction-button" type="submit" >
                 👍      <%= post.likedBy.length%>
                     </button>
                 </form> 
                 <form method="POST" action="/posts/<%=post.id%>/dislike/" aria-label="dislikes">
-                    <button type="submit">
+                    <button class="interaction-button" type="submit">
                         👎 <%= post.dislikedBy.length%>
                     </button>
                 </form>

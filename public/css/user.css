@@ -4,6 +4,14 @@
     justify-content: space-around;
 }
 
+.user-list .user{
+	border: 1px solid var(--foregroundColor);
+	border-radius: 10px;
+    margin-bottom: var(--marginMedium);
+
+
+}
+
 .profile-banner{
     margin-bottom: -8vh;
 }

@@ -24,6 +24,8 @@
 	list-style-type: none;
 	background-color: var(--backgroundDarkerColor);
 	color: var(--foregroundColor);
+
+	border-radius: 10px;
 }
 
 .post p {
@@ -72,6 +74,20 @@
 	display: block;
 	margin: var(--marginMedium) auto;
 }
+
+.interaction-button{
+	color: var(--primaryColor);
+	border: 1px solid var(--primaryColor);
+	background-color: transparent;
+	padding: var(--paddingSmall);
+	margin: var(--marginSmall);
+}
+
+.interaction-button:hover, .party-button:hover{
+	color: var(--highlightColor);
+	border-color: var(--highlightColor);
+}
+
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 480px) {
