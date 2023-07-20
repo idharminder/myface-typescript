@@ -27,3 +27,9 @@ function goPartyMode(){
     // post.style.color = `rgb(${green}, ${blue},${red},)`;
   }
 }
+
+function goToUserProfile(userId){
+  // window.location.replace(`/users/${userId}`); // loses history of previous
+  window.location.href = `/users/${userId}`;
+  console.log("connected");
+}

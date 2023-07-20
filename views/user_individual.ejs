@@ -1,6 +1,6 @@
 <img class="user-background" src= <%= user.coverImageUrl%> alt="coverImageUrl">
-<div class="user-profile">
-    <img class="user-profile-image" src= <%= user.profileImageUrl%> alt="profileImageUrl">
+<div class="user-profile" onclick="goToUserProfile('<%= user.id %>')">
+    <img class="user-profile-image" src= <%= user.profileImageUrl%> alt="profileImageUrl" >
     <div class="user-text">
         <p class="user-name"><%=user.name%></p>
         <p class="user-username"><%=user.username%></p>
